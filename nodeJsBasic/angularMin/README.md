@@ -14,3 +14,4 @@ This project is useful to do small test/ POC.
 npm install
 
 
+Go to http://localhost:4200/

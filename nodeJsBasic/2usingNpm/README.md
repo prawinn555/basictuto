@@ -12,18 +12,19 @@ download depencendies to node_modules)
 
 # step3
 
-add server.ks
+add server.js
 
 # execution
 
 node server
 
 
-# for fresh checkout
+# After fresh checkout (package.json already configured)
 
 npm install
 
-- to upload all depencencies before exécution.
+
+- to download all depencencies before execution.
 
 
 

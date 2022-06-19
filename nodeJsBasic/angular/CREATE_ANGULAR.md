@@ -15,3 +15,11 @@ DO NOT run : sudo apt install ng-common
 # create app
 
 ng new new_project --defaults=true
+
+
+# Run
+
+ng serve 
+(in the directory new_project)
+
+Go to http://localhost:4200/
