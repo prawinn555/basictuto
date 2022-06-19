@@ -1,6 +1,7 @@
 # intro
 
-This tutorial show how to use a database
+This tutorial shows how to access a database with NodeJS.
+
 SQLite is a file-based database.
 
 # steps for adding libraries to acccss SQL database.
