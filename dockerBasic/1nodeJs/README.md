@@ -1,3 +1,9 @@
+# intro
+
+In this project, we will see how to create a Node JS docker
+
+
+
 # create image
 
 
