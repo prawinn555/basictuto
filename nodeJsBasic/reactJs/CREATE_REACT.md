@@ -17,3 +17,8 @@ cd my-app
 npm start
 
  - execute "start"  or "main" script in package.json
+ 
+ 
+ http://localhost:3000/
+ 
+ 

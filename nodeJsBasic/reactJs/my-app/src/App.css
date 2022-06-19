@@ -1,7 +1,12 @@
 .App {
   text-align: center;
-  border: 20px solid;
-  border-color: white;
+  border: 20px solid;  border-color: white;
+
+}
+
+.demoBlock {
+  border: 5px solid;  
+  /* border-color: white; */
 }
 
 .App-logo {
@@ -17,7 +22,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
