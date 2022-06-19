@@ -1,6 +1,8 @@
 # intro
 
-- Application is based on a file server nginx.
+- In this example, we will learn how to allow docker containers to keep persistent data on file system volumes.
+
+- The docker is based on a file server 'nginx'.
 - It will serve all files in the public_files directory of the host machine.
 
 
