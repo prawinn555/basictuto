@@ -1,6 +1,6 @@
 # Intro
 
-In this example, we will see how to use Basic angular concepts, such how to create components, how to pass parameters, how to to data binding between the controllers and the view (template).
+In this example, we will see how to use Basic angular concepts, such how to create components, how to pass parameters from one component to another, how to to data binding between the controllers and the view (template), how to create events.
 
 
 
