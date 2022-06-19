@@ -1,6 +1,6 @@
 # intro
 
-this project shows how to install angular tools
+This project shows how to install angular tools
 and create an empty project
 
 
