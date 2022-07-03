@@ -7,7 +7,7 @@ In this example, we will learn basic concepts of React JS, such how to create co
 Also we will see difference between 'functional-style' components and 'class-style' components.
 
 
-# update node if necessary
+# update `node` if necessary
 
 - Use n module from npm in order to upgrade node
 
@@ -19,15 +19,26 @@ sudo n stable
 sudo n latest
 
 
+# create an application from scratch.
+
+```
 npx create-react-app my-app 
 
 cd my-app
 
 npm start
 
- - execute "start"  or "main" script in package.json
+
+
+```
+
+(The command will execute "start" script in package.json).
  
  
  http://localhost:3000/
+ 
+ # More description
+ 
+ See README.md  in `my-app`.
  
  
