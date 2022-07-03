@@ -1,4 +1,7 @@
 import { Component, Input,Output, EventEmitter } from '@angular/core';
+import {CallApiRestService } from './callApiRest.service';
+import {MyData} from './myData';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-demo3',
@@ -19,8 +22,23 @@ import { Component, Input,Output, EventEmitter } from '@angular/core';
 	    </div>
 	    
 	    <button (click)="sendEvent()" >sendEvent</button>
-	    <br/>
 	    
+	    <br/>
+	        <button (click)="testRestAPI(false)" >REST API call</button>
+	    <br/>
+	        <button (click)="testRestAPI(true)" >test call error</button>
+	        	    
+	    <br/>
+	    API call result : {{resultApiCall | json}}
+	    <br/>
+	    Test async pipe
+	    <br/>
+	        <button (click)="testRestAPIAsync(false)" >REST API call</button>
+	    <br/>
+	        <button (click)="testRestAPIAsync(true)" >test call error</button>
+	        	   
+	    <br/>
+	    API call result with asycn pipe: {{resultApiCall$ | async | json}}	    
     </div>
   `,
   styles: [
@@ -35,8 +53,12 @@ export class Demo3Component {
   @Output() outEvent = new EventEmitter<object>();
   
   num = '';
+  
+  resultApiCall : Array<MyData> = [];
 
-  constructor() { }
+  resultApiCall$ : Observable<MyData>;
+  
+  constructor(private restApi: CallApiRestService) { }
 
   sendEvent() {
 	var ev = { childData : this.num };
@@ -46,5 +68,21 @@ export class Demo3Component {
   _parseInt(v:string) {
 	 return parseInt(v);
    }
-  
+   
+   testRestAPI(provokeErrorForTest: boolean) {
+	  this.resultApiCall = [];
+	  // unnecessary to unsubscribe observer with finite value.
+	  this.restApi.getData(provokeErrorForTest).subscribe(data => {
+		   console.log('got data', data);
+           this.resultApiCall.push(data);
+      });
+      console.log('Demo3Component : subscribe done');
+   }
+	
+   testRestAPIAsync(provokeErrorForTest: boolean) {
+	  // unnecessary to unsubscribe observer with finite value.
+	  this.resultApiCall$ = this.restApi.getData(provokeErrorForTest);
+      console.log('Demo3Component : subscribe done');
+   }
 }
+  
