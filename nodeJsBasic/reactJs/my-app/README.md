@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## to deploy on github pages
+
+npm run build
+
+npm run deploy
+
+- push to branche gh-pages
+
+
 ## Available Scripts
 
 In the project directory, you can run:
