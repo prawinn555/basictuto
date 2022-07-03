@@ -4,11 +4,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## to deploy on github pages
 
-npm run build
+In the directory mu-app.
 
-npm run deploy
+`npm run build`
 
-- push to branche gh-pages
+
+Install the tool.
+
+Run `sudo npm install gh-pages --save-dev -g` to download gh-pages.
+
+
+`gh-pages -d build --dest reactsample` 
 
 
 ## Available Scripts

@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-main',
   template: `
    <div>
+          <img src="assets/angular_logo.png" />
 	      <h1>Demo1 : using tag reference</h1> 
 	      <app-demo1></app-demo1>
 	      

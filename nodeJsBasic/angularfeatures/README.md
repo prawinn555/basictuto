@@ -27,10 +27,10 @@ Go to http://localhost:4200/
 
 # to deploy on github pages
 
-configure package.json. In scripts, add `"deploy": "gh-pages -d dist"`
-In devDependencies, add `"gh-pages": "^2.2.0"`. Run `npm i` to download gh-pages.
+
+Run `sudo npm install gh-pages --save-dev -g` to download gh-pages.
 
 
-npm run build
+`npm run build`
 
-npm run deploy
+`gh-pages -d dist/angularfeatures --dest angularfeatures`

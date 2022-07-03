@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "new_project": {
+    "angularfeatures": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/new_project",
+			"baseHref": ".",
+            "outputPath": "dist/angularfeatures",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "new_project:build:production"
+              "browserTarget": "angularfeatures:build:production"
             },
             "development": {
-              "browserTarget": "new_project:build:development"
+              "browserTarget": "angularfeatures:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "new_project:build"
+            "browserTarget": "angularfeatures:build"
           }
         }
       }

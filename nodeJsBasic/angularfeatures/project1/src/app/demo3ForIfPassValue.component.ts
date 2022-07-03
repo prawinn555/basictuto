@@ -26,7 +26,7 @@ import { Observable } from 'rxjs';
 	    <br/>
 	        <button (click)="testRestAPI(false)" >REST API call</button>
 	    <br/>
-	        <button (click)="testRestAPI(true)" >test call error</button>
+	        <button (click)="testRestAPI(true)" >test call error</button> See the error log in Console.
 	        	    
 	    <br/>
 	    API call result : {{resultApiCall | json}}
@@ -35,7 +35,7 @@ import { Observable } from 'rxjs';
 	    <br/>
 	        <button (click)="testRestAPIAsync(false)" >REST API call</button>
 	    <br/>
-	        <button (click)="testRestAPIAsync(true)" >test call error</button>
+	        <button (click)="testRestAPIAsync(true)" >test call error</button> See the error log in Console.
 	        	   
 	    <br/>
 	    API call result with asycn pipe: {{resultApiCall$ | async | json}}	    
