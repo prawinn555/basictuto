@@ -29,6 +29,7 @@ export class CallApiRestService {
 */
 
 	private handleError(error: HttpErrorResponse) {
+	   debugger;
 	   console.error('CallApiRestService : An error occurred:', error);
 	  // Return an observable with a user-facing error message.
 	  return throwError(() => new Error('Application says "Something bad happened; please try again later."'));

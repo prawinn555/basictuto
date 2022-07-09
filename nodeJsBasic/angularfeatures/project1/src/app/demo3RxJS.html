@@ -1,0 +1,107 @@
+     <div>
+   
+		<p>
+		   Let's learn about more concepts, creating complexe components, calling REST API.
+		</p>
+		
+		<h1>
+		   In this demo, we will learn
+		</h1>
+		
+		<ul>
+		  <li>Using directives ngSwitch and ngFor</li>
+		  <li>How to create parent/ child components and communicating them</li>
+		  <li>Getting data from the parent components</li>
+		  <li>Sending notifications and data to the parent components</li>
+	      <li>Using RxJS framework to call Web Services</li>
+		</ul>
+   
+  
+	    
+		<h1>Using directive ngSwitch</h1>
+	    
+	    <p>
+	    Enter a number to test  <input [(ngModel)]="num"  />
+	    </p>
+	    
+	    <p>Testing if the numer is odd or oven (ngIf)</p>
+	   
+	    <div [ngSwitch]="analyse(num)">
+		    <div *ngSwitchCase="'ODD'" >Odd number</div>
+		    <div *ngSwitchCase="'EVEN'" >Even number</div>
+		    <div *ngSwitchCase="'INVALID'" >Invalid number</div>
+		    <div *ngSwitchDefault>Default case</div>
+	    </div>
+	    
+	    	    
+		<h1>Using directive ngFor</h1>
+	    
+	    <p>Looping over the the data received from the parent</p>
+
+		<ul>
+		    <li *ngFor="let item of inputParam.data; let index = index">
+		       index {{index}} {{item}}
+		    </li>
+	    </ul>
+	    
+	    <h1>
+	       How to create parent/ child components and communicating them
+	    </h1>
+        <h2>
+           Getting data from parent components
+        </h2>
+        
+        <p>
+	    This is data object passed from the parent component 
+	    </p>
+	    
+	    <div class="alert alert-info" >
+	    	{{inputParam | json}}
+	    </div>
+	    
+	    <h2>Sending notifications and data to the parent components</h2>
+	    
+	    <p>This button will send a notification with data (input field above) to the parent.
+	       The result will be shown in a console.
+	    </p>
+	    
+	    
+	    <button (click)="sendEvent()" class="btn btn-primary" >sendEvent</button>
+	    
+	    
+	    <h1>
+	       Using RxJS framework to call Web Services
+	    </h1>
+	    
+	    
+	    <h2>REST API calling with 'subscribe'</h2>
+
+		<div class="btn-toolbar" >
+		    <button (click)="testRestAPI(false)" class="btn btn-success me-2" >REST API call</button>
+	
+		    <button (click)="testRestAPI(true)" class="btn btn-danger me-2" >
+		    test call error</button> 
+		    
+		    See error logs in Console.
+	    </div>
+	    
+
+	        	    
+		<div class="alert alert-primary" *ngIf="resultApiCall">
+	    API call result : {{resultApiCall | json}}
+		</div>
+		
+	    <h2>REST API calling with 'async' pipe</h2>
+
+
+		<div class="btn-toolbar" >
+	        <button (click)="testRestAPIAsync(false)" class="btn btn-success me-2" >REST API call</button>
+
+	        <button (click)="testRestAPIAsync(true)" class="btn btn-danger" >test call error</button> 
+	    </div>   
+
+	    <div class="alert alert-primary" *ngIf="resultApiCall$" >
+	    API call result with asycn pipe: {{resultApiCall$ | async | json}}	    
+	    </div>
+
+    </div>

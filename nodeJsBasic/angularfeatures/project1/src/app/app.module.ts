@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { Demo1Component } from './demo1.component';
 import { Demo2Component } from './demo2Form.component';
-import { Demo3Component } from './demo3ForIfPassValue.component';
+import { Demo3Component } from './demo3RxJS.component';
 
 import { FormsModule } from '@angular/forms';
 
