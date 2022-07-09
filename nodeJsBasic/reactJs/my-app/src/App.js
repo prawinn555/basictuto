@@ -1,24 +1,59 @@
+import React, { useState } from 'react';
+  
+
 import logo from './logo.svg';
 import './App.css';
 import Demo1 from './Demo1';
 import Demo2 from './Demo2';
+import Home from './Home';
 
 function App() {
+	
+   const menus = [ 'Home', 'Demo 1', 'Demo 2'];
+   const [menu, setMenu] = useState(menus[0]);
+
+   const getMenuClass = (m) => (m===menu)?  'nav-link active' : 'nav-link';
+
+   const goMenu = (m) => setMenu(m);
+
+   
   return (
-    <div className="App">
+    <div id="rootContent" className="App m-2">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-		<div className="demoBlock" >
-			<h1>Demo1 : events & state</h1>
+      
+      	<div className="bd-example" >
+			<nav className="nav nav-pills nav-fill">
+			 { menus.map( (m) => 
+				  <a  key={m} className={getMenuClass(m)} 
+				  	  onClick={ (ev)=>goMenu(m) } >{m}</a>
+			  )}
+			  
+			</nav>
+		</div>
+		
+	    {menu==='Home' && 
+	    <div class="my-1" >
+		   <Home />
+		</div>}
+      
+		
+	    {menu==='Demo 1' && 
+	    <div class="my-1" >
 			<Demo1 inputFromParent={ {greeting : 'Whats\'up?' } } />
-		</div>
+		</div>}
 		
-		<div className="demoBlock" >
-			<h1>Demo2 : input binding, loop, if/else</h1>
-			<Demo2 inputFromParent={ {data : ['a', 'b', 'c'] }} />
-		</div>
 		
+	    {menu==='Demo 2' && 
+	    <div class="my-1" >
+			<Demo2 inputFromParent={ 
+				{data : [ {id:1, value:'a'}, {id:2, value:'b'}, {id:3, value:'c'}] }
+			} />
+		</div>}
+		
+		
+
     </div>
   );
 }
@@ -28,7 +63,6 @@ export default App;
 
 /*
 Note on syntaxe
-
 
 ====================================
 functional style

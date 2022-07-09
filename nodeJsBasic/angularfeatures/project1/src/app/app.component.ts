@@ -23,7 +23,7 @@ import { Component, OnInit } from '@angular/core';
 				<h1>
 				   Welcome ! 👋👋👋
 				</h1>
-				<p>In this small app, you will find a various demos on angular baic features, such as data binding, 
+				<p>In this small app, you will find a various demos on angular basic features, such as data binding, 
 				 managing input forms, calling REST API with RxJS.
 				</p>
 				
@@ -42,6 +42,14 @@ import { Component, OnInit } from '@angular/core';
 				        target="_blank"
 						class="link-info m-1">🌐 Linkedin</a>
 				</p>.
+				
+        
+        		<p>
+        		  Related tutorials : 
+        		  <a 	href="https://prawinn555.github.io/basictuto/reactsample/"
+				        target="_blank"
+						class="link-info m-1">▶️ React JS features (basic tutorials)</a>
+        		</p>
 				
 			 </div>	
 			 

@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.bd-example {
+	padding: 1.5rem;
+	border: solid #dee2e6;
+}
+
+#rootContent h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+#rootContent pre {
+  background-color: #BBBBBB;
+}
+
+#rootContent h2 {
+	font-size: 1.5em;
+	background-image: conic-gradient(#553c9a, #ee4b2b, #00c2cb);
+	  color: transparent;
+	  background-clip: text;
+	  -webkit-background-clip: text;
+}
+
+@import '~bootstrap/scss/bootstrap.scss';

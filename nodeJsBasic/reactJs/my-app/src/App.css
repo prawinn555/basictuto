@@ -1,17 +1,10 @@
-.App {
-  text-align: center;
-  border: 20px solid;  border-color: white;
 
-}
 
-.demoBlock {
-  border: 5px solid;  
-  /* border-color: white; */
-}
 
 .App-logo {
-  height: 40vmin;
   pointer-events: none;
+	width : auto;
+	max-height: 120px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

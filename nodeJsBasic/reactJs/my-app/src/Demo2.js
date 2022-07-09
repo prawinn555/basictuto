@@ -4,13 +4,10 @@ class Demo2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '56546'
+      firstName: 'David'
     };
 
-    this.handleChange = (evt) => {
-	    // non généric doee
-	    // this.setState({value: evt.target.value});
-	    
+    this.genericStateCopy = (evt) => {
 	 	// generique code
 	    const name = evt.target.name;
 	    const value =
@@ -20,60 +17,144 @@ class Demo2 extends React.Component {
 	    s[name] = value;
 	    this.setState(s);
 	  };
-    this.handleSubmit = (buttonId, event) => {
-	    alert('Submit by button ' +buttonId +' : value='+ this.state.value);
+      this.handleAction = (buttonId, event) => {
+	    alert('Action from the button ' +buttonId);
 	  };
-  }
+	  
+	this.staff = ['David', 'Mark', 'Sophie'];
+	
+	this.isStaff = (enteredName) => {
+		return this.staff.indexOf(enteredName)>=0;
+	}
+   }
+    
 
   render() {
-	// use if condition.
-	let divPositiveNumber = (parseInt(this.state.value)>0)?
-	  <div>YES {parseInt(this.state.value)}</div> :
-	  null;
+
 	
     return (
+	<>
+	
+	<p>Let's learn to use forms.</p>
+	
+	<p>This component is written in the class-component style (not fonctional-component style)</p>
+	
+        <h1>Features</h1>
+        
+        <ul>
+          <li>Creating and using a form</li>
+          <li>Using 'if' conditions and loop (for)</li>
+          <li>Creating action buttons and actions with arrow operators : Showing how to pass extra parameters on click</li>
+        </ul>
+        
+
+	  <h1>
+	    Creating and using a form
+	  </h1>
+        
+        
+        <p>The event 'onChange' on the input will call the function genericStateCopy,
+			which will copy the input value to the state.
+			The state attribute name is the same as the input name.
+         
+            Using this approach, we can reuse the same function to manny inputs.
+        </p>
+	
       <form >
-      
-		<p>Data from parent, { JSON.stringify(this.props.inputFromParent) } </p>
+		  <div class="form-group">
+		    <label for="firstName">First Name</label>
+			<input class="form-control"
+				   id="firstName"
+			       name='firstName' value={this.state.firstName} onChange={this.genericStateCopy} />
+		  </div>
+     </form>   
+        
+        <div class="alert alert-primary my-2" >
+		State value : { JSON.stringify(this.state) } </div>
+        
+        
+        <h1>Using 'if' conditions </h1>
+        
+        <p>
+          In this example, we will test the first name entered is in the list of the staffs {JSON.stringify(this.staff) }.
+          The result YES ou NO will be shown below.
+        </p>
+        
+		  <div class="alert alert-primary" >
+			{ this.isStaff(this.state.firstName)? 
+		  		<div>YES</div> : <div>NO</div>
+			}
+		  </div>
 		
-        <label>
-          Input :
-          <input name='value' value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <br/>
-        <b>Example how to add extra parameter to event.</b><br/>
+		
+        <h1>Using 'for' (loop) </h1>
+        
+        <p>In this example, we will show how to loop over a list received from the parent component.
+        The looping is simply a map function of Array.
+        React framework requires that each generated element from the loop has a unique ID, with the attribute 'key'.
+        </p>
+        
+        <p>This is the data for making a loop</p>
+		<div class="alert alert-primary" > { JSON.stringify(this.props.inputFromParent) } </div>
+		
+		<p>
+		  <b>Example code</b>
+		</p>
+		<pre>{`
+<ul>
+{this.props.inputFromParent.data.map( (item, index) => 
+	<li key={item.id} >Item index {index} {JSON.stringify(item) }</li>
+)}
+</ul>`}
+		</pre>
+		
+		<p><b>Result</b></p>
+		
+		<ul>
+		{this.props.inputFromParent.data.map( (item, index) => 
+	  		<li key={item.id} >Item index {index} {JSON.stringify(item) }</li>
+		)}
+		</ul>
+		
+		
+        <h1>Example how to add extra parameter to event.</h1>
+        
+        
+        <p>
         The two buttons call the same function with différent button ID (A ou B).
-        <input type="button" value="Button A (send)" 
+        In this case, we can use the arrow operator like this :
+        </p>
+        
+        <pre>{
+          `onClick={(event) => this.handleAction('A', event)}`
+		}	
+        </pre>
+        <input type="button" 
+        	class="btn btn-primary me-2"
+        	value="Button A (send)" 
         	onClick={
-			  (event) => this.handleSubmit('A', event)
+			  (event) => this.handleAction('A', event)
 			}
         />
-        <input type="button" value="Button B (send)" 
+        <input type="button" 
+           	class="btn btn-primary"
+        	value="Button B (send)" 
         	onClick={
-			  (event) => this.handleSubmit('B', event)
+			  (event) => this.handleAction('B', event)
 			}
         />
         
-        <br/>
-		state value : {this.state.value} <br/>
-		
-		<b>test 'if' condition using variable (is the input a number positif ?):</b><br/>
-		{divPositiveNumber}
-		<br/>
-		<b>test 'if' condition 'inline':</b><br/>
-		{(parseInt(this.state.value)>0) &&
-	  		<div>YES {parseInt(this.state.value)}</div> 
-		}
-		{  !(parseInt(this.state.value)>0) &&
-	  		<div>Not a positif number</div> 
-		}
-		<b>test 'for' loop (inputFromParent) :</b><br/>
-		{this.props.inputFromParent.data.map( (item, index) => 
-	  		<div key={index} ><div>Item {index} {item}</div><br/></div>
-		)}
+
 		
 		
-      </form>
+		<p class="my-2">
+      
+        		  <a 	href="https://github.com/prawinn555/basictuto/blob/main/nodeJsBasic/reactJs/my-app/src/Demo2.js"
+				        target="_blank"
+						class="link-info m-1">🌐 Code of this demo</a>
+						
+		</p>
+     </>
     );
   }
 }
