@@ -87,7 +87,7 @@
 	    
 
 	        	    
-		<div class="alert alert-primary" *ngIf="resultApiCall">
+		<div class="alert alert-primary my-2" *ngIf="resultApiCall">
 	    API call result : {{resultApiCall | json}}
 		</div>
 		
@@ -100,7 +100,7 @@
 	        <button (click)="testRestAPIAsync(true)" class="btn btn-danger" >test call error</button> 
 	    </div>   
 
-	    <div class="alert alert-primary" *ngIf="resultApiCall$" >
+	    <div class="alert alert-primary my-2" *ngIf="resultApiCall$" >
 	    API call result with asycn pipe: {{resultApiCall$ | async | json}}	    
 	    </div>
 

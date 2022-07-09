@@ -5,18 +5,20 @@ import { Component, OnInit } from '@angular/core';
   template: `
    <div id="rootContent"
         class="m-2">
-          <img src="assets/angular_logo.png"
-               class="m-2" />
-          
 
 		<div class="bd-example" >
-			<nav class="nav nav-pills nav-fill">
-
-
-			  <a *ngFor="let item of menus"
-			    	[class]="getMenuClass(item)" 
-			    	(click)="goMenu(item)">{{item}}</a>
-			</nav>
+			<div class="row">
+			   <img src="assets/angular_logo.png"
+	               class="m-2" />
+	               
+				<nav class="nav nav-pills nav-fill">
+	
+	
+				  <a *ngFor="let item of menus"
+				    	[class]="getMenuClass(item)" 
+				    	(click)="goMenu(item)">{{item}}</a>
+				</nav>
+			</div>
 		</div>
 
 			 <div class="m-1" *ngIf="menu==='Home'" >

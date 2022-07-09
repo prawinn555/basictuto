@@ -5,6 +5,16 @@
 	border: solid #dee2e6;
 }
 
+.bd-example img {
+	max-width : 5%;
+	height: auto;
+}
+
+.bd-example nav {
+	width : 80%;
+
+}
+
 #rootContent h1 {
   font-size: 2em;
   font-weight: 600;
