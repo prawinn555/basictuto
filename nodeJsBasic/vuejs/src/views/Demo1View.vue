@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup >
 import HelloWorld from '@/components/HelloWorld.vue';
 import CodeHighlight from "vue-code-highlight/src/CodeHighlight.vue";
 import "vue-code-highlight/themes/duotone-sea.css";
@@ -20,7 +20,7 @@ import "vue-code-highlight/themes/duotone-sea.css";
 	<p>The code in the parent component (script and template) : </p>
 	
 		
-    <CodeHighlight language="html"><pre>
+    <CodeHighlight language="javascript"><pre>
 		import HelloWorld from '@/components/HelloWorld.vue';
     </pre></CodeHighlight>
     
@@ -32,9 +32,12 @@ import "vue-code-highlight/themes/duotone-sea.css";
 	
     <CodeHighlight language="html"><pre>
 		&lt;script setup lang=&quot;ts&quot;&gt;
-		defineProps&lt;{
-		  msg: string
-		}&gt;()
+defineProps({
+  msg: {
+    type: String,
+    required: true
+  }
+})
 		&lt;/script&gt;
 		
 		&lt;template&gt;

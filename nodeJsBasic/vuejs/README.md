@@ -9,6 +9,24 @@ npm init vue@latest
 ```
 
 
+# how to publish in github
+
+
+
+Run `sudo npm install gh-pages --save-dev -g` to download gh-pages.
+
+ 
+
+
+```sh
+npm run build
+
+gh-pages -d dist --dest vuejs
+
+
+```
+
+
 
 # Generated doc
 
