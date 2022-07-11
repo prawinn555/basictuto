@@ -1,2 +1,0 @@
-import{C as o}from"./duotone-sea.f5b82592.js";import{o as t,c as s,b as n,w as a,a as e,g as l}from"./index.da854484.js";const _=e("h1",null,"Demo 3 : Coming soon",-1),c=e("p",null," This example shows h... ",-1),i=e("p",null,"Running code",-1),h=l(" TODO "),d=e("p",null,"The code : ",-1),r=e("pre",null,`		 TODO
-    `,-1),x={__name:"Demo3View",setup(u){return(m,p)=>(t(),s("div",null,[_,c,i,h,d,n(o,{language:"html"},{default:a(()=>[r]),_:1})]))}};export{x as default};
