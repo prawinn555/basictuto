@@ -41,6 +41,17 @@ The machine should has enough memory ( I used 16 GB laptop.)
 
 - Creating an account, Creating a container registry and deploy on Azure
 
+# Configuring DB connection
+
+
+Edit application.properties
+
+Add this property
+
+´´´
+quarkus.mongodb.connection-string=mongodb+srv://userxxx:passwordxxx@your_cluster.gcp.mongodb.net
+´´´
+
 
 
 # Azure commands
