@@ -105,9 +105,9 @@
 
 <div class="container">
     <div class="left-column">
-        <p class="lead">This demo shows how to access MongoDB with Quarkus.</p>
+        <p class="lead">This demo shows how to access MongoDB / Kafka with Quarkus (2 parts)</p>
 
-        <h2>Key technologies</h2>
+        <h2>Key technologies : part 1 Quarkus MongoDB</h2>
 
         <ul>
           <li>Quarkus : a fast lightweight reactive micro service framework in Java</li>
@@ -117,14 +117,31 @@
           <li>Docker : application packaging and deployment framework </li>
         </ul>
         
+        <h2>Key technologies : part 2 Kafka</h2>
+
+        <ul>
+          <li>Kafka : Big data messaging system (event processing) </li>
+          <li>Confluent : a cloud provider for Kafka </li>
+        </ul>
         
-        <h2>Rest services</h2>
+        <h2>Rest services - MongoDB </h2>
 
         <ul>
           <li>Listing 10 movies (no filter) : 
           		<a href="service/listMovies" target="_blank">Test here</a></li>
           <li>Finding movies by title containing string : 
           		<a href="service/findMovies/devil" target="_blank">Movies with 'devil' in the title.</a></li>
+        </ul>
+
+        <h2>Rest services - Kafka </h2>
+
+        <ul>
+          <li>Producing a message (Hello world) : 
+          		<a href="kafkaservice/produce/Hello world" target="_blank">
+          			Test here</a></li>
+          <li>Consuming messages (not yet consume) : 
+          		<a href="kafkaservice/consume" target="_blank">
+          			show messages</a></li>
         </ul>
 
     </div>
